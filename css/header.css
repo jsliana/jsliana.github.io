@@ -228,7 +228,8 @@
 	}
 
 	.nav-items {
-		position: fixed;
+		position: absolute;
+		min-height: 100vh;
 		z-index: 999;
 		inset: 0 0 0 30%;
 		flex-direction: column;
