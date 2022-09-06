@@ -1,0 +1,313 @@
+.header-top {
+	background: var(--clr_green);
+	padding: 1.5rem 8rem;
+}
+
+.header-top ul {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	justify-content: safe flex-end;
+}
+
+.nav-language {
+	display: flex;
+	align-items: center;
+}
+
+.nav-language select {
+	font-size: 1.6rem;
+	border-radius: 0.4rem;
+	padding: 0.2rem 0.5rem;
+	background: var(--clr_white);
+}
+
+.header-bottom {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	position: relative;
+}
+
+.header-brand * {
+	width: 12rem;
+	height: auto;
+	font-size: 4rem;
+}
+
+.header-bottom-menu {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.menu-toggle {
+	display: none;
+}
+
+.menu-search {
+	display: none;
+}
+
+.menu-language {
+	display: none;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.nav-items {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.nav-items a {
+	color: var(--clr_grey);
+}
+
+.nav-search {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	gap: 0.4rem;
+}
+
+.nav-search input {
+	border: solid thin var(--clr_grey_lg);
+	border-radius: 0.4rem;
+	padding: 0.7rem;
+	width: 12rem;
+}
+
+.nav-search button {
+	padding: 0.8rem 1.2rem;
+	font-size: 1.6rem;
+	background: var(--clr_green);
+	border-radius: 0.4rem;
+	color: var(--clr_white);
+}
+
+.intra-news {
+	display: none;
+}
+
+.showcase {
+	background: url(../assets/img/christopher-gower.jpg);
+	background-color: var(--clr_grey);
+	padding: 10rem 0;
+	background-blend-mode: multiply;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.showcase-info {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 0 2rem;
+}
+
+.showcase h1 {
+	font-size: 4rem;
+	font-weight: 300;
+	text-shadow: 0 0 2rem var(--clr_black);
+	color: var(--clr_white);
+}
+
+.showcase button {
+	border-radius: 0.4rem;
+	font-size: 1.6rem;
+	padding: 1.2rem 2rem;
+	background-color: var(--clr_green);
+	color: var(--clr_white);
+}
+
+.showcase-mobile {
+	display: none;
+}
+
+@media only screen and (min-width: 1750px) {
+	.showcase {
+		padding: 20rem 0;
+	}
+}
+
+@media only screen and (max-width:  850px) {
+
+	.header-top {
+		display: none;
+	}
+
+	.header-bottom {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 9999;
+		background-color: var(--clr_white);
+	}
+
+	.nav-search {
+		display: none;
+	}
+
+	.menu-toggle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		background: transparent;
+		color: black;
+		top: 50%;
+		bottom: 50%;
+		right: 2rem;
+		z-index: 9999;
+	}
+
+	.menu-toggle i {
+		font-size: 3rem;
+	}
+
+	.menu-search {
+		display: flex;
+		align-items: center;
+	}
+
+	.menu-search input {
+		font-size: 1.6rem;
+		height: 3rem;
+		width: 12rem;
+		padding: 0 1rem;
+		border-top-left-radius: 0.4rem;
+		border-bottom-left-radius: 0.4rem;
+	}
+
+	.menu-search button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 2rem;
+		background: var(--clr_green);
+		color: var(--clr_white);
+		padding: 0.5rem;
+		border-top-right-radius: 0.4rem;
+		border-bottom-right-radius: 0.4rem;
+	}
+
+	.menu-language {
+		display: flex;
+		align-items: center;
+	}
+
+	.menu-language .fa-globe {
+		color: var(--clr_white);
+		background: var(--clr_green);
+		font-size: 2rem;
+		padding: 0.5rem;
+		border-top-left-radius: 0.4rem;
+		border-bottom-left-radius: 0.4rem;
+	}
+
+	.menu-language select {
+		font-size: 1.6rem;
+		border-top-right-radius: 0.4rem;
+		border-bottom-right-radius: 0.4rem;
+	}
+
+	.intra-news {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.nav-items {
+		position: fixed;
+		z-index: 999;
+		inset: 0 0 0 30%;
+		flex-direction: column;
+		padding: min(30vh, 10rem) 2rem;
+		background: rgba(0, 0, 0, 0.9);
+		transform: translateX(100%);
+		align-items: center;
+		gap: 4rem;
+		transition: 0.3s ease-in-out;
+	}
+
+	.nav-items a {
+		color: white;
+		font-size: 2rem;
+	}
+
+	.nav-items[menu-open="true"] {
+		transform: translateX(0%);
+	}
+
+	@supports (backdrop-filter:  blur(0.25rem)) {
+		.nav-items {
+			backdrop-filter:  blur(0.25rem);
+			background: rgba(0, 0, 0, 0.9);
+		}
+	}
+
+	.showcase {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.showcase-info {
+		padding-top: 8rem;
+	}
+}
+
+@media only screen and (max-width:  555px) {
+
+	.header-bottom {
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		box-shadow: 0 1 1rem var(--clr_black);
+	}
+
+	.showcase {
+		display: none;
+	}
+
+	.showcase-info {
+		padding-top: 0;
+	}
+
+	.showcase-mobile {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 4rem;
+		padding-top: 6rem;
+	}
+
+	.showcase-mobile h1 {
+		font-size: 4rem;
+		font-weight: 300;
+	}
+
+	.showcase-mobile button {
+		border-radius: 0.4rem;
+		font-size: 1.6rem;
+		padding: 1.2rem 2rem;
+		background-color: var(--clr_green);
+		color: var(--clr_white);
+	}
+
+	.showcase-mobile-img img {
+		width: 100%;
+		height: auto;
+		filter: brightness(50%)
+	}
+}

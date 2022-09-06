@@ -1,0 +1,130 @@
+.section1 {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+.subpages-cards ul {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+}
+
+.sub-card {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--clr_white);
+	padding: 25% 0;
+	border-radius: 0.4rem;
+	box-shadow: 0 0 0.5rem var(--clr_black);
+	overflow: hidden;
+}
+
+.sub-card h3 {
+	font-size: 3rem;
+	text-shadow: 0 0 1rem var(--clr_black);
+	z-index: 1;
+}
+
+.card-curtain {
+	position: absolute;
+	bottom: -100%;
+	width: 100%;
+	height: 100%;
+	background: rgba(138, 226, 52, 0.5);
+	transition: 0.3s ease-in-out;
+}
+
+@supports (backdrop-filter:  blur(0.15rem)) {
+	.card-curtain {
+		backdrop-filter:  blur(0.15rem);
+		background: rgba(138, 226, 52, 0.5);
+	}
+}
+
+.sub-card:hover .card-curtain {
+	bottom: -1rem;
+	height: 110%;
+}
+
+#sub-card1 {
+	background: url(../assets/img/company.jpeg);
+	background-color: var(--clr_grey);
+	background-blend-mode: soft-light;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#sub-card2 {
+	background: url(../assets/img/products.jpeg);
+	background-color: var(--clr_grey);
+	background-blend-mode: soft-light;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#sub-card3 {
+	background: url(../assets/img/contact.jpeg);
+	background-color: var(--clr_grey);
+	background-blend-mode: soft-light;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.statistics {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 2rem 0;
+}
+
+.stats {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.stats-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 4rem;
+	color: var(--clr_green);
+}
+
+.stats h1 {
+	font-size: 4rem;
+	font-weight: 300;
+}
+
+.stats p {
+	font-size: 1.4rem;
+}
+
+.stats1,
+.stats2,
+.stats3 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	min-width: 10rem;
+	color: var(--clr_grey);
+}
+
+@media only screen and (max-width: 750px) {
+	.subpages-cards ul {
+		grid-template-columns: repeat(1, 1fr);;
+	}
+
+	.statistics {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 4rem;
+	}
+}
+
